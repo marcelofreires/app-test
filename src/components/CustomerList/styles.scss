@@ -1,0 +1,26 @@
+@import '../../assets/sass/shared.scss';
+
+.customer-list {
+  @include list-style-remove;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.customer-item {
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+
+  @include media-tablet-portrait-up {
+    width: calc(100%/3);
+  }
+  
+  @include media-tablet-landscape-up {
+    width: calc(100%/4);
+  }
+}

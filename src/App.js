@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.scss';
-import ClientList from './components/ClientList';
+import CustomerList from './components/CustomerList';
 
 function App() {
   return (
     <main className="App">
-      <ClientList />
+
+      <div className="container">
+        <CustomerList />
+      </div>
     </main>
   );
 }

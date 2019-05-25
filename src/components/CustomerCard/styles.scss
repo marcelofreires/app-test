@@ -1,0 +1,62 @@
+@import '../../assets/sass/shared.scss';
+
+.customer-card {
+  background-color: get-color(light);
+  padding: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.customer-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: get-color(grey-lighter);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.customer-info {
+  font-size: 1.4rem;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.customer-name {
+  font-size: 1.8rem;
+  margin-bottom: .5rem;
+}
+
+.customer-more {
+  width: 100%;
+  text-align: center;
+}
+
+.customer-cpf {
+  margin-bottom: 0;
+}
+
+.customer-birthdate {
+  margin-bottom: 0;
+}
+
+.button {
+  display: inline-block;
+  font-size: 1.4rem;
+  padding: .8rem 1.6rem;
+  border: 1px solid get-color(grey-light);
+  border-radius: 4px;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.0125em;
+
+  &:hover {
+    background-color: get-color(primary);
+    border-color: get-color(primary);
+    color: get-color(light);
+  }
+}
