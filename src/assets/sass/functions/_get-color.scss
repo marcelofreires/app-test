@@ -1,0 +1,7 @@
+@function get-color($color-name) {
+  @if map-has-key($colors, $color-name) {
+    @return map-get($colors, $color-name);
+  } @else {
+    @error 'The color `#{$color-name}` does not exist on $colors map.';
+  }
+}

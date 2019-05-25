@@ -1,0 +1,26 @@
+$basic-colors: (
+  dark: #282c34,
+  light: #fff,
+  grey: #686a6c,
+  grey-dark: #404246,
+  grey-light: #909296,
+  grey-lighter: #eaeef1,
+  primary: #61dafb,
+  secondary: #353739,
+  text: #333539,
+  text-muted: #666
+);
+
+
+$basic-colors-variations: (
+  primary-light: mix(#fff, map-get($basic-colors, primary), 10%),
+  primary-lighter: mix(#fff, map-get($basic-colors, primary), 15%),
+  primary-dark: mix(#000, map-get($basic-colors, primary), 10%),
+  primary-darker: mix(#000, map-get($basic-colors, primary), 15%),
+  secondary-light: mix(#fff, map-get($basic-colors, secondary), 10%),
+  secondary-lighter: mix(#fff, map-get($basic-colors, secondary), 15%),
+  secondary-dark: mix(#000, map-get($basic-colors, secondary), 10%),
+  secondary-darker: mix(#000, map-get($basic-colors, secondary), 15%),
+);
+
+$colors: map-merge($map1: $basic-colors, $map2: $basic-colors-variations);

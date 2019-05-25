@@ -1,0 +1,71 @@
+@mixin media($width, $type: "min") {
+  @if $type == "max" {
+    $width: $width - 1px;
+  }
+
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+// Media up
+@mixin media-phone-up {
+  @include media(get-bp(phone)) {
+    @content;
+  }
+}
+
+@mixin media-tablet-portrait-up {
+  @include media(get-bp(tablet-portrait)) {
+    @content;
+  }
+}
+
+@mixin media-tablet-landscape-up {
+  @include media(get-bp(tablet-landscape)) {
+    @content;
+  }
+}
+
+@mixin media-desktop-up {
+  @include media(get-bp(desktop)) {
+    @content;
+  }
+}
+
+@mixin media-desktop-big-up {
+  @include media(get-bp(desktop-big)) {
+    @content;
+  }
+}
+
+// Media down
+@mixin media-phone-down {
+  @include media(get-bp(phone), "max") {
+    @content;
+  }
+}
+
+@mixin media-tablet-portrait-down {
+  @include media(get-bp(tablet-portrait), "max") {
+    @content;
+  }
+}
+
+@mixin media-tablet-landscape-down {
+  @include media(get-bp(tablet-landscape), "max") {
+    @content;
+  }
+}
+
+@mixin media-desktop-down {
+  @include media(get-bp(desktop), "max") {
+    @content;
+  }
+}
+
+@mixin media-desktop-big-down {
+  @include media(get-bp(desktop-big), "max") {
+    @content;
+  }
+}
