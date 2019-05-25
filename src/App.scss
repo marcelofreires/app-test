@@ -1,7 +1,8 @@
 @import './assets/sass/shared.scss';
 
 .App {
-  text-align: center;
+  background-color: get-color(grey-lighter);
+  min-height: 100vh;
 }
 
 .App-logo {
