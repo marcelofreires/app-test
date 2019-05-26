@@ -13,10 +13,10 @@ class ClientList extends Component {
   componentDidMount() {
     this.showCustomer();
   }
-
+  
   showCustomer = async () => {
     const response = await api.get(`/customers`);
-
+    
     this.setState({ customers: response.data.data});
   }
 
