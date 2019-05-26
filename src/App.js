@@ -1,11 +1,15 @@
 import React from 'react';
-import './App.scss';
+
 import CustomerList from './components/CustomerList';
+import AddCustomer from './components/AddCustomer';
+
+import './App.scss';
 
 function App() {
   return (
     <main className="App">
-
+      <AddCustomer />
+      
       <div className="container">
         <CustomerList />
       </div>

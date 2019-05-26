@@ -1,0 +1,19 @@
+.button {
+  display: inline-block;
+  background-color: get-color(light);
+  color: get-color(primary);
+  font-size: 1.4rem;
+  padding: .8rem 1.6rem;
+  border: 1px solid get-color(primary);
+  border-radius: 4px;
+  line-height: 1;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.0125em;
+
+  &:hover {
+    background-color: get-color(primary);
+    border-color: get-color(primary);
+    color: get-color(light);
+  }
+}

@@ -1,0 +1,41 @@
+@import '../../assets/sass/shared.scss';
+
+.add-customer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-wrap {
+  width: 100%;
+}
+
+.form-item {
+  width: 100%;
+
+  + .form-item {
+    margin-top: 1.5rem;
+  }
+}
+
+.form-label {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  display: block;
+  min-height: 36px;
+  padding: .8rem 1.2rem;
+  border: 1px solid get-color(grey-light);
+  outline: none;
+
+  &:focus {
+    border-color: get-color(primary);
+  }
+}
