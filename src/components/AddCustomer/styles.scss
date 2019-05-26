@@ -2,6 +2,7 @@
 
 .add-customer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 3rem;
   max-width: 500px;
