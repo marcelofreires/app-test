@@ -17,3 +17,32 @@
     color: get-color(light);
   }
 }
+
+.icon-button {
+  display: inline-block;
+  background-color: get-color(light);
+  color: get-color(primary);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  &:hover {
+    background-color: get-color(primary);
+    border-color: get-color(primary);
+    color: get-color(light);
+  }
+  
+  &-danger {
+    @extend .icon-button;
+    color: get-color(danger);
+
+    &:hover {
+      background-color: get-color(danger);
+      border-color: get-color(danger);
+      color: get-color(light);
+    }
+  }
+}

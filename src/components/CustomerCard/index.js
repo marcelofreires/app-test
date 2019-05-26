@@ -2,12 +2,19 @@ import React from 'react';
 
 import moment from 'moment';
 import { format as formatCPF } from "gerador-validador-cpf";
+import { FiTrash } from "react-icons/fi";
 
 
 import './styles.scss';
 
 const ClientCard = (props) => (
   <article className="customer-card">
+    <button 
+      onClick={() => props.onClick(props.customer.id)}
+      className="icon-button-danger customer-action left"
+    >
+      <FiTrash size={20} />
+    </button>
     <figure className="customer-avatar">
       <img src="https://source.unsplash.com/uDx79AOZ3jM/100x100" alt={props.customer.name} />
     </figure>

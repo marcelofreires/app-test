@@ -2,11 +2,12 @@
 
 .customer-card {
   background-color: get-color(light);
-  padding: 2rem;
+  padding: 4rem 2rem;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   border-radius: 6px;
+  position: relative;
 }
 
 .customer-avatar {
@@ -41,4 +42,17 @@
 
 .customer-birthdate {
   margin-bottom: 0;
+}
+
+.customer-action {
+  position: absolute;
+  top: 1rem;
+  
+  &.right {
+    right: 1rem;
+  }
+  
+  &.left {
+    left: 1rem;
+  }
 }
