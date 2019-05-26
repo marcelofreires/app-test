@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-.form-wrap {
+.form {
   width: 100%;
 }
 
@@ -35,6 +35,7 @@
   padding: .8rem 1.2rem;
   border: 1px solid get-color(grey-light);
   outline: none;
+  font-family: inherit;
 
   &:focus {
     border-color: get-color(primary);

@@ -12,7 +12,9 @@ class ClientList extends Component {
   state = {
     customers: [],
     customer: {},
-    showModal: false
+    showModal: false,
+    editMode: false,
+    updateCustomer: {}
   }
 
   componentDidMount() {
@@ -23,6 +25,13 @@ class ClientList extends Component {
     await api.delete(`/customers/${id}`);
 
     this.showCustomers();
+  }
+  
+  handleEdit = async id => {
+    this.setState({ editMode: !this.state.editMode });
+    console.log(this.state.editMode);
+    
+    // await api.patch(`/customers/${id}`, {});
   }
   
   showCustomers = async () => {
@@ -52,7 +61,13 @@ class ClientList extends Component {
         <ul className="customer-list">
           {this.state.customers.map(customer => (
             <li key={customer.id} className="customer-item">
-              <CustomerCard customer={customer} onClickDelete={this.handleDelete} onClickMoreInfo={this.showCustomer} />
+              <CustomerCard
+                customer={customer}
+                onClickDelete={this.handleDelete}
+                onClickMoreInfo={this.showCustomer}
+                onClickEdit={this.handleEdit}
+                editMode={this.state.editMode}
+              />
             </li>
           ))}
         </ul>
