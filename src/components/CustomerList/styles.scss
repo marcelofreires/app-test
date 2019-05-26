@@ -24,3 +24,28 @@
     width: calc(100%/4);
   }
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(get-color(dark), .3);
+}
+
+.modal-wrap {
+  @include container;
+  position: relative;
+  overflow: auto;
+  max-height: 90vh;
+}
+
+.modal-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+}
