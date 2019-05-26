@@ -1,5 +1,9 @@
 import React from 'react';
 
+import moment from 'moment';
+import { format as formatCPF } from "gerador-validador-cpf";
+
+
 import './styles.scss';
 
 const ClientCard = (props) => (
@@ -9,11 +13,11 @@ const ClientCard = (props) => (
     </figure>
     <div className="customer-info">
       <h3 className="customer-name">{props.customer.name}</h3>
-      <p className="customer-cpf">{props.customer.cpf}</p>
-      <p className="customer-birthdate">{props.customer.birthdate}</p>
+      <p className="customer-cpf">{formatCPF(props.customer.cpf)}</p>
+      <p className="customer-birthdate">{moment(props.customer.birthdate).format("DD/MM/YYYY")}</p>
     </div>
     <div className="customer-more">
-      <a className="button" href="#asdf">Mais informações</a>
+      <button className="button">Mais informações</button>
     </div>
   </article>
 );
