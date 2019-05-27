@@ -1,0 +1,24 @@
+@import '../../assets/sass/shared.scss';
+
+.create-customer-wrap {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-customer-intro {
+  margin-bottom: 2rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: get-color(primary)
+}
+
+.create-customer-box {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 3rem;
+}

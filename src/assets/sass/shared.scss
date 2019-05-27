@@ -1,16 +1,22 @@
+// Functions
+@import './functions/get-breakpoints';
+@import './functions/get-color';
+@import './functions/get-header-heigth';
+
 // Settings
 @import './settings/breakpoints';
 @import './settings/colors';
 @import './settings/type';
 @import './settings/fonts';
+@import './settings/transition';
+@import './settings/box-shadow';
+@import './settings/icon-button';
+@import './settings/header-height';
 
 // Mixins
 @import './mixins/container';
 @import './mixins/list-style';
 @import './mixins/media-queries';
 @import './mixins/placeholder';
-
-// Functions
-@import './functions/get-breakpoints';
-@import './functions/get-color';
+@import './mixins/box-shadow';
 

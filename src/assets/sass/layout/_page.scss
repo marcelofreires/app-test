@@ -1,0 +1,17 @@
+@import '../shared.scss';
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  padding-bottom: 1rem;
+  padding-top: calc(#{get-header-height(phone)} + 1rem);
+  
+  @include media-tablet-portrait-up {
+    padding-bottom: 2rem;
+    padding-top: calc(#{get-header-height(tablet-portrait)} + 2rem);
+  }
+  
+  &.page-center {
+    align-items: center;
+  }
+}

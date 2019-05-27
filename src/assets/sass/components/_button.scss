@@ -10,6 +10,7 @@
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.0125em;
+  transition: $transition-default;
 
   &:hover, &:focus {
     background-color: get-color(light);
@@ -27,9 +28,10 @@
   border: 1px solid transparent;
   border-radius: 4px;
   line-height: 1;
-  width: 36px;
-  height: 36px;
+  width: $icon-button-height;
+  height: $icon-button-height;
   padding: 0;
+  transition: $transition-default;
 
   &:hover, &:focus {
     background-color: get-color(primary);

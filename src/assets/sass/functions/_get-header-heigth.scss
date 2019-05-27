@@ -1,0 +1,7 @@
+@function get-header-height($height) {
+  @if map-has-key($header-height, $height) {
+    @return map-get($header-height, $height);
+  } @else {
+    @error 'The height `#{$height}` does not exist on $header-height map.';
+  }
+}
