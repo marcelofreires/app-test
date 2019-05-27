@@ -68,7 +68,7 @@ class AddCustomer extends Component {
     
     return (
       <div className="add-customer">
-      <form className="form" onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <div className="form-item">
             <label className="form-label">Nome completo</label>
             <input

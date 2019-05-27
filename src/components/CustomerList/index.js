@@ -14,10 +14,32 @@ class ClientList extends Component {
     customer: {},
     showModal: false,
     editMode: false,
-    updateCustomer: {}
+    updateCustomerName: ""
   }
 
   componentDidMount() {
+    this.showCustomers();
+  }
+  
+  handleEditModeToggle = () => {
+    this.setState({ editMode: !this.state.editMode });
+  }
+ 
+  handleEditInputChange = e => {
+    this.setState({
+      updateCustomerName: e.target.value
+    });
+  }
+  
+  handleEditSubmit = async (id, e) => {
+    e.preventDefault();
+    
+    await api.patch(`/customers/${id}`, {
+      name: this.state.updateCustomerName
+    });
+
+    this.setState({ editMode: !this.state.editMode });
+
     this.showCustomers();
   }
 
@@ -27,14 +49,9 @@ class ClientList extends Component {
     this.showCustomers();
   }
   
-  handleEdit = async id => {
-    this.setState({ editMode: !this.state.editMode });
-    console.log(this.state.editMode);
-    
-    // await api.patch(`/customers/${id}`, {});
-  }
-  
   showCustomers = async () => {
+    console.log("show");
+    
     const response = await api.get("/customers");
     
     this.setState({ customers: response.data.data});
@@ -42,7 +59,6 @@ class ClientList extends Component {
   
   showCustomer = async id => {
     const response = await api.get(`/customers/${id}`);
-    console.log(response.data);
     
     this.setState({
       customer: response.data,
@@ -56,6 +72,8 @@ class ClientList extends Component {
   }
   
   render() {
+    // console.log(this.state.updateCustomerName);
+
     return (
       <>
         <ul className="customer-list">
@@ -65,8 +83,6 @@ class ClientList extends Component {
                 customer={customer}
                 onClickDelete={this.handleDelete}
                 onClickMoreInfo={this.showCustomer}
-                onClickEdit={this.handleEdit}
-                editMode={this.state.editMode}
               />
             </li>
           ))}
@@ -81,7 +97,14 @@ class ClientList extends Component {
               >
                 <FiXCircle size={28} />
               </button>
-              <CustomerBio customer={this.state.customer} />
+              <CustomerBio
+                customer={this.state.customer}
+                onClickEdit={this.handleEditModeToggle}
+                editMode={this.state.editMode}
+                handleEditInputChange={this.handleEditInputChange}
+                updateCustomerName={this.state.updateCustomerName}
+                handleEditSubmit={this.handleEditSubmit}
+              />
             </div>
           </div>
         }

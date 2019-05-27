@@ -1,7 +1,7 @@
 .button {
   display: inline-block;
-  background-color: get-color(light);
-  color: get-color(primary);
+  background-color: get-color(primary);
+  color: get-color(light);
   font-size: 1.4rem;
   padding: .8rem 1.6rem;
   border: 1px solid get-color(primary);
@@ -11,10 +11,10 @@
   font-weight: bold;
   letter-spacing: 0.0125em;
 
-  &:hover {
-    background-color: get-color(primary);
+  &:hover, &:focus {
+    background-color: get-color(light);
     border-color: get-color(primary);
-    color: get-color(light);
+    color: get-color(primary);
   }
 }
 
@@ -31,7 +31,7 @@
   height: 36px;
   padding: 0;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: get-color(primary);
     border-color: get-color(primary);
     color: get-color(light);
@@ -41,7 +41,7 @@
     @extend .icon-button;
     color: get-color(danger);
 
-    &:hover {
+    &:hover, &:focus {
       background-color: get-color(danger);
       border-color: get-color(danger);
       color: get-color(light);

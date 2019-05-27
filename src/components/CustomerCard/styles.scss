@@ -73,10 +73,7 @@
     text-align: center;
     font-weight: bold;
     background-color: transparent;
-    
-    &:-internal-autofill-selected {
-      background-color: #fff !important;
-    }
+    color: get-color(primary);
 
     &:focus {
       border: 1px solid transparent;
@@ -84,9 +81,6 @@
 
     @include input-placeholder {
       color: get-color(primary);
-      // font-size: 1.8rem;
-      // text-align: center;
-      // font-weight: bold;
     }
   }
 }
