@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import moment from 'moment';
+import VMasker from 'vanilla-masker';
 import { format as formatCPF } from "gerador-validador-cpf";
 import api from '../../services/api';
 
@@ -68,7 +69,7 @@ class AddCustomer extends Component {
               maxLength="14"
               className="form-input"
               placeholder="Digite seu CPF"
-              value={this.state.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"$1.$2.$3-$4")}
+              value={VMasker.toPattern(this.state.cpf, "999.999.999-99")}
               onChange={this.handleInputChange}
               autoComplete="off"
               required
@@ -82,7 +83,7 @@ class AddCustomer extends Component {
               maxLength="10"
               className="form-input"
               placeholder="31/12/1989"
-              value={this.state.birthdate.replace(/(\d{2})(\d{2})(\d{4})/g,"$1/$2/$3")}
+              value={VMasker.toPattern(this.state.birthdate, "99/99/9999")}
               onChange={this.handleInputChange}
               autoComplete="off"
               required
