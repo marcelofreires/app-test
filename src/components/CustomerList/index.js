@@ -8,7 +8,7 @@ import CustomerBio from '../CustomerBio';
 
 import './styles.scss';
 
-class ClientList extends Component {
+class CustomerList extends Component {
   state = {
     customers: [],
     customer: {},
@@ -80,4 +80,4 @@ class ClientList extends Component {
   }
 }
 
-export default ClientList;
+export default CustomerList;
