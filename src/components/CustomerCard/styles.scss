@@ -60,8 +60,6 @@
 .update-customer {
   font-size: 1.4rem;
   width: 100%;
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
   text-align: center;
   
   .form-input {
@@ -73,7 +71,7 @@
     text-align: center;
     font-weight: bold;
     background-color: transparent;
-    color: get-color(primary);
+    color: get-color(dark);
 
     &:focus {
       border: 1px solid transparent;

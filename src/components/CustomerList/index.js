@@ -12,34 +12,10 @@ class ClientList extends Component {
   state = {
     customers: [],
     customer: {},
-    showModal: false,
-    editMode: false,
-    updateCustomerName: ""
+    showModal: false
   }
 
   componentDidMount() {
-    this.showCustomers();
-  }
-  
-  handleEditModeToggle = () => {
-    this.setState({ editMode: !this.state.editMode });
-  }
- 
-  handleEditInputChange = e => {
-    this.setState({
-      updateCustomerName: e.target.value
-    });
-  }
-  
-  handleEditSubmit = async (id, e) => {
-    e.preventDefault();
-    
-    await api.patch(`/customers/${id}`, {
-      name: this.state.updateCustomerName
-    });
-
-    this.setState({ editMode: !this.state.editMode });
-
     this.showCustomers();
   }
 
@@ -99,11 +75,8 @@ class ClientList extends Component {
               </button>
               <CustomerBio
                 customer={this.state.customer}
-                onClickEdit={this.handleEditModeToggle}
-                editMode={this.state.editMode}
-                handleEditInputChange={this.handleEditInputChange}
-                updateCustomerName={this.state.updateCustomerName}
-                handleEditSubmit={this.handleEditSubmit}
+                showCustomers={this.showCustomers}
+                handleModal={this.handleModal}
               />
             </div>
           </div>
