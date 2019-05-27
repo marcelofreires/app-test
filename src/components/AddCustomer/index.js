@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import moment from 'moment';
-// import VMasker from 'vanilla-masker';
-import { format as formatCPF, validate as validateCPF } from "gerador-validador-cpf";
+import { format as formatCPF } from "gerador-validador-cpf";
 import api from '../../services/api';
 
 import './styles.scss';
@@ -14,33 +13,14 @@ class AddCustomer extends Component {
     birthdate: ""
   }
 
-  maskCPF = () => {
-    // VMasker.maskPattern("999.999.999-99");
-  }
-
-  validateCPFValue = () => {
-    console.log(validateCPF(this.state.cpf));
-  }
-  
-  formatCPFValue = () => {
-    console.log(`CPF: ${this.state.cpf} -> ${formatCPF(this.state.cpf, "digits")}`); 
-  }
-
-  formatDate = () => {
-    console.log(`NASCIMENTO: ${this.state.birthdate} -> ${moment(this.state.birthdate, "DDMMYYYY").format("YYYY-MM-DD")}`)
-  }
-
   handleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await api.post("/customers", {
+    await api.post("/customers", {
       name: this.state.name,
       cpf: formatCPF(this.state.cpf, "digits"),
       birthdate: moment(this.state.birthdate, "DDMMYYYY").format("YYYY-MM-DD")
     });
-
-    console.log(response);
-    console.log(response.data);
 
     this.handleInputClean();
   }
@@ -64,8 +44,6 @@ class AddCustomer extends Component {
   }
   
   render() {
-    console.log(this.state);
-    
     return (
       <div className="add-customer">
         <form className="form form-add-customer" onSubmit={this.handleSubmit}>
@@ -114,14 +92,6 @@ class AddCustomer extends Component {
             <button className="button" type="submit">Cadastrar</button>
           </div>
         </form>
-        {/* <br/>
-        <button onClick={this.formatDate} className="button">Format data</button>
-        <br/>
-        <button onClick={this.maskCPF} className="button">Mask cpf</button>
-        <br/>
-        <button onClick={this.validateCPFValue} className="button">Validar cpf</button>
-        <br/>
-        <button onClick={this.formatCPFValue} className="button">Format cpf</button> */}
       </div>
     );
   }

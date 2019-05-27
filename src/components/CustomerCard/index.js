@@ -6,7 +6,7 @@ import { FiTrash } from "react-icons/fi";
 
 import './styles.scss';
 
-const ClientCard = (props) => (
+const CustomerCard = (props) => (
   <article className="customer-card">
     <button 
       onClick={() => props.onClickDelete(props.customer.id)}
@@ -37,4 +37,4 @@ const ClientCard = (props) => (
   </article>
 );
 
-export default ClientCard;
+export default CustomerCard;

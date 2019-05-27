@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import api from '../../services/api';
-import { FiXCircle } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 
 import CustomerCard from '../../components/CustomerCard';
 import CustomerBio from '../CustomerBio';
@@ -26,8 +26,6 @@ class ClientList extends Component {
   }
   
   showCustomers = async () => {
-    console.log("show");
-    
     const response = await api.get("/customers");
     
     this.setState({ customers: response.data.data});
@@ -68,7 +66,7 @@ class ClientList extends Component {
               onClick={this.handleModal}
               className="modal-close icon-button"
             >
-              <FiXCircle />
+              <FiX />
             </button>
             <CustomerBio
               customer={this.state.customer}
