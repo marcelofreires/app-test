@@ -1,17 +1,140 @@
 @import '../../assets/sass/shared.scss';
 
 .customer-bio {
-  background-color: #fff;
+  background-color: get-color(light);
+  border-radius: 6px;
+  overflow: hidden;
 
-  &-image {}
+  @include media-tablet-portrait-up {
+    display: flex;
+  }
 
-  &-info {}
+  &-image {
+    @include media-tablet-portrait-up {
+      width: 45%;
+    }
+    
+    @include media-tablet-landscape-up {
+      width: 50%;
+    }
+    
+    img {
+      object-fit: cover;
+      display: block;
+
+      @include media-tablet-portrait-up {
+        height: 100%;
+      }
+    }
+  }
+
+  &-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @include media-tablet-portrait-up {
+      width: 55%;
+      padding: 1.5rem;
+    }
+
+    @include media-tablet-landscape-up {
+      width: 50%;
+    }
+  }
+
+  &-info {
+    text-align: center;
+  }
+  
+  &-edit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -46px;
+    margin-bottom: 20px;
+    
+    @include media-tablet-portrait-up {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .icon-button {
+      font-size: 2.2rem;
+      
+      &-back {
+        font-size: 2.8rem;
+      }
+    }
+  }
+
+  .customer-bio-label {
+    font-size: 1.4rem;
+    margin: 0;
+
+    span {
+      margin: 0 10px;
+    }
+  }
 
   &-name {
     font-size: 1.8rem;
+    margin-bottom: 4px;
+    
+    @include media-tablet-portrait-up {
+      font-size: 2rem;
+    }
+
+    @include media-tablet-landscape-up {
+      font-size: 2.3rem;
+    }
   }
 
   &-description {
-    // max-height: 
+    margin-top: 10px;
+    max-height: 20rem;
+    overflow: auto;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    
+    @include media-tablet-portrait-up {
+      margin-top: 30px;
+      max-height: 60vh;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.update-customer {
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+  
+  .form-input {
+    padding: 0;
+    min-height: 0;
+    line-height: 1;
+    border: 1px solid transparent;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+    color: get-color(dark);
+    margin-bottom: 0.5rem;
+    height: 22px;
+    
+    @include media-tablet-portrait-up {
+      font-size: 2rem;
+    }
+
+    @include media-tablet-landscape-up {
+      font-size: 2.3rem;
+    }
+
+    &:focus {
+      border: 1px solid transparent;
+    }
+
+    @include input-placeholder {
+      color: get-color(primary);
+    }
   }
 }

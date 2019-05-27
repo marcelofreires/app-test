@@ -1,0 +1,41 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(get-color(dark), .3);
+  opacity: 0;
+  z-index: -1;
+  transition: $transition-default .2s;
+
+  &.active {
+    opacity: 1;
+    z-index: 20;
+  }
+
+  &-wrap {
+    @include container;
+    position: relative;
+    overflow: hidden;
+    max-height: 95vh;
+    
+    @include media-tablet-portrait-up {
+      overflow: unset;
+    }
+  }
+  
+  &-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 0;
+    font-size: 2.8rem;
+    
+    @include media-tablet-portrait-up {
+      top: -4rem;
+    }
+  }
+}

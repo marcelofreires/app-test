@@ -14,9 +14,9 @@ class AddCustomer extends Component {
     birthdate: ""
   }
 
-  // maskCPF = () => {
-  //   VMasker.maskPattern("999.999.999-99");
-  // }
+  maskCPF = () => {
+    // VMasker.maskPattern("999.999.999-99");
+  }
 
   validateCPFValue = () => {
     console.log(validateCPF(this.state.cpf));
@@ -68,7 +68,7 @@ class AddCustomer extends Component {
     
     return (
       <div className="add-customer">
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form className="form form-add-customer" onSubmit={this.handleSubmit}>
           <div className="form-item">
             <label className="form-label">Nome completo</label>
             <input
@@ -78,6 +78,7 @@ class AddCustomer extends Component {
               placeholder="Digite seu nome"
               value={this.state.name}
               onChange={this.handleInputChange}
+              autoComplete="off"
               required
             />
           </div>
@@ -91,6 +92,7 @@ class AddCustomer extends Component {
               placeholder="Digite seu CPF"
               value={this.state.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"$1.$2.$3-$4")}
               onChange={this.handleInputChange}
+              autoComplete="off"
               required
             />
           </div>
@@ -104,6 +106,7 @@ class AddCustomer extends Component {
               placeholder="31/12/1989"
               value={this.state.birthdate.replace(/(\d{2})(\d{2})(\d{4})/g,"$1/$2/$3")}
               onChange={this.handleInputChange}
+              autoComplete="off"
               required
             />
           </div>
@@ -111,14 +114,14 @@ class AddCustomer extends Component {
             <button className="button" type="submit">Cadastrar</button>
           </div>
         </form>
-        <br/>
-        <button onClick={this.formatDate} className="button">Format data</button>
         {/* <br/>
-        <button onClick={this.maskCPF} className="button">Mask cpf</button> */}
+        <button onClick={this.formatDate} className="button">Format data</button>
+        <br/>
+        <button onClick={this.maskCPF} className="button">Mask cpf</button>
         <br/>
         <button onClick={this.validateCPFValue} className="button">Validar cpf</button>
         <br/>
-        <button onClick={this.formatCPFValue} className="button">Format cpf</button>
+        <button onClick={this.formatCPFValue} className="button">Format cpf</button> */}
       </div>
     );
   }

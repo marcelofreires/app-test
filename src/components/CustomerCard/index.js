@@ -11,8 +11,9 @@ const ClientCard = (props) => (
     <button 
       onClick={() => props.onClickDelete(props.customer.id)}
       className="icon-button-danger customer-action left"
+      title="Excluir cliente"
     >
-      <FiTrash size={20} />
+      <FiTrash />
     </button>
     
     <figure className="customer-avatar">

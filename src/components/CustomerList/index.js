@@ -48,8 +48,6 @@ class ClientList extends Component {
   }
   
   render() {
-    // console.log(this.state.updateCustomerName);
-
     return (
       <>
         <ul className="customer-list">
@@ -64,23 +62,21 @@ class ClientList extends Component {
           ))}
         </ul>
         
-        {this.state.showModal &&
-          <div className="modal">
-            <div className="modal-wrap">
-              <button
-                onClick={this.handleModal}
-                className="modal-close icon-button"
-              >
-                <FiXCircle size={28} />
-              </button>
-              <CustomerBio
-                customer={this.state.customer}
-                showCustomers={this.showCustomers}
-                handleModal={this.handleModal}
-              />
-            </div>
+        <div className={`modal ${this.state.showModal ? "active" : ""}`}>
+          <div className="modal-wrap">
+            <button
+              onClick={this.handleModal}
+              className="modal-close icon-button"
+            >
+              <FiXCircle />
+            </button>
+            <CustomerBio
+              customer={this.state.customer}
+              showCustomers={this.showCustomers}
+              handleModal={this.handleModal}
+            />
           </div>
-        }
+        </div>
       </>
     );
   }

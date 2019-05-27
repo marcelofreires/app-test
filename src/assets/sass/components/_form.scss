@@ -1,0 +1,36 @@
+.form {
+  width: 100%;
+}
+
+.form-item {
+  width: 100%;
+
+  + .form-item {
+    margin-top: 1.5rem;
+  }
+}
+
+.form-label {
+  width: 100%;
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  letter-spacing: 0.015em;
+}
+
+.form-input {
+  width: 100%;
+  display: block;
+  min-height: 36px;
+  padding: .8rem 1.2rem;
+  border: 1px solid rgba(get-color(grey-light), .6);
+  outline: none;
+  font-family: inherit;
+  border-radius: 4px;
+
+  &:focus {
+    border-color: get-color(primary);
+    transition: $transition-default;
+  }
+}

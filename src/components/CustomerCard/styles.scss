@@ -4,18 +4,51 @@
   background-color: get-color(light);
   padding: 4rem 2rem;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
+  flex-grow: 1;
   border-radius: 6px;
   position: relative;
+  transition: $transition-default;
+
+  &:hover {
+    @include box-shadow(get-color(primary), .15);
+
+    .customer-avatar {
+      &::before {
+        border: 1px solid rgba(get-color(primary), .6);
+      }
+    }
+  }
 }
 
 .customer-avatar {
+  background-color: get-color(grey-lighter);
   width: 100px;
   height: 100px;
-  background-color: get-color(grey-lighter);
   border-radius: 100px;
-  overflow: hidden;
+  position: relative;
+
+  img {
+    border-radius: 100px;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 110px;
+    border-radius: 110px;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $transition-default;
+  }
 }
 
 .customer-info {
@@ -32,6 +65,7 @@
 }
 
 .customer-more {
+  margin-top: auto;
   width: 100%;
   text-align: center;
 }
@@ -45,6 +79,7 @@
 }
 
 .customer-action {
+  font-size: 2.2rem;
   position: absolute;
   top: 1rem;
   
@@ -54,31 +89,5 @@
   
   &.left {
     left: 1rem;
-  }
-}
-
-.update-customer {
-  font-size: 1.4rem;
-  width: 100%;
-  text-align: center;
-  
-  .form-input {
-    padding: 0;
-    min-height: 0;
-    line-height: 1.5;
-    border: 1px solid transparent;
-    font-size: 1.8rem;
-    text-align: center;
-    font-weight: bold;
-    background-color: transparent;
-    color: get-color(dark);
-
-    &:focus {
-      border: 1px solid transparent;
-    }
-
-    @include input-placeholder {
-      color: get-color(primary);
-    }
   }
 }
