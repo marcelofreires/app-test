@@ -9,6 +9,7 @@ Após a instalação de todas as dependências, basta rodar o comando:
 ##### `yarn start`
 
 A aplicação rodará em modo de desenvolvimeto.
+
 Abra seu navegador em [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
 
 
