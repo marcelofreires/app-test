@@ -1,6 +1,6 @@
 ## App test
 
-Depois de clonar o repositório, entre no diretório do projeto e instale as denpedências utilizando:
+Depois de clonar o repositório, entre no diretório do projeto e instale as dependências utilizando:
 
 ##### `yarn install`
 
