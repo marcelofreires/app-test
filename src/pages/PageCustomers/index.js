@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HeaderPage from '../../components/HeaderPage';
-import CustomerList from '../../components/CustomerList';
+import HeaderPage from 'components/HeaderPage';
+import CustomerList from 'components/CustomerList';
 
 const PageCustomers = () => (
   <>

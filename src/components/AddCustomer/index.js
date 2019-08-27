@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import VMasker from 'vanilla-masker';
 import { format as formatCPF } from "gerador-validador-cpf";
-import api from '../../services/api';
+import api from 'services/api';
 
 import './styles.scss';
 

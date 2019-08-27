@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import api from '../../services/api';
+import api from 'services/api';
 import moment from 'moment';
 import { format as formatCPF } from "gerador-validador-cpf";
 import { FiEdit2, FiChevronLeft, FiSave } from "react-icons/fi";
