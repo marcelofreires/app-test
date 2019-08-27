@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import CreateCustomer from './pages/CreateCustomer';
-import PageCustomers from './pages/PageCustomers';
+import CreateCustomer from 'pages/CreateCustomer';
+import PageCustomers from 'pages/PageCustomers';
 
 const Routes = () => (
   <BrowserRouter>

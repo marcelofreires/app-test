@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 
-import HeaderPage from '../../components/HeaderPage';
-import AddCustomer from '../../components/AddCustomer';
+import HeaderPage from 'components/HeaderPage';
+import AddCustomer from 'components/AddCustomer';
 
 import './styles.scss';
 

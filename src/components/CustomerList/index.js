@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import api from '../../services/api';
+import api from 'services/api';
 import { FiX } from "react-icons/fi";
 
-import CustomerCard from '../../components/CustomerCard';
-import CustomerBio from '../CustomerBio';
+import CustomerCard from 'components/CustomerCard';
+import CustomerBio from 'components/CustomerBio';
 
 import './styles.scss';
 
